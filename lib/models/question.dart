@@ -2,5 +2,8 @@ class Question {
     int id = 0;
     String content = "";
     String rightAnswer = "";
-    List propositions = [];
+    List<String> propositions;
+
+  Question(this.id,this.content,this.rightAnswer, this.propositions);
+  
 }
