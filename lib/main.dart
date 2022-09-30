@@ -43,7 +43,7 @@ class _QuestionPageState extends State<QuestionPage> {
               return afficher(
                   content_bis: questionList[index].content,
                   propositions_bis: questionList[index].propositions,
-                  rightAnswer_bis : questionList[index].rightAnswer);
+                  rightAnswer_bis: questionList[index].rightAnswer);
             })));
   }
 
@@ -95,8 +95,10 @@ class afficher extends StatefulWidget {
 
   List<String> propositions_bis;
   afficher(
-      {super.key, required this.content_bis, required this.propositions_bis, required this.rightAnswer_bis});
-      
+      {super.key,
+      required this.content_bis,
+      required this.propositions_bis,
+      required this.rightAnswer_bis});
 
   @override
   State<afficher> createState() => _afficherState();
@@ -141,15 +143,16 @@ class _afficherState extends State<afficher> {
                           itemCount: widget.propositions_bis.length,
                           itemBuilder: (context, i) {
                             return TextButton(
+                                style: TextButton.styleFrom(
+                                  textStyle: const TextStyle(fontSize: 20),
+                                ),
                                 onPressed: () {
                                   setState(() {
                                     reponse = widget.propositions_bis[i];
-                                    if(widget.propositions_bis[i] == widget.rightAnswer_bis)
-                                    {
+                                    if (widget.propositions_bis[i] ==
+                                        widget.rightAnswer_bis) {
                                       print("Vrais");
-                                    }
-                                    else
-                                    {
+                                    } else {
                                       print("Faux");
                                     }
                                   });
